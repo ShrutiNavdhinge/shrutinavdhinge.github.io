@@ -1,1 +1,196 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shruti Navdhinge | Data Analyst Portfolio</title>
+  <meta name="description" content="Explore Shruti's Data Analytics portfolio featuring Excel, SQL, Power BI and Python projects.">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #182338;
+      line-height: 1.6;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 8%;
+      background: #fff;
+      border-bottom: 1px solid #e5eaf2;
+      position: sticky;
+      top: 0;
+    }
+    nav strong { color: #174ea6; }
+    nav a {
+      color: #26344b;
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 14px;
+    }
+    .hero {
+      padding: 85px 8%;
+      background: #102a43;
+      color: white;
+    }
+    .hero p { max-width: 650px; }
+    .tag {
+      color: #b9d8ff;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.15; }
+    h2 { font-size: 30px; }
+    .button {
+      display: inline-block;
+      margin: 14px 10px 0 0;
+      padding: 11px 18px;
+      border-radius: 7px;
+      background: #fff;
+      color: #102a43;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .button.secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid #b9d8ff;
+    }
+    main { max-width: 1100px; margin: auto; padding: 30px 22px; }
+    section { padding: 35px 0; }
+    .muted { color: #5b6678; }
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e0e7f0;
+      border-radius: 12px;
+      padding: 22px;
+    }
+    .card h3 { margin-top: 0; color: #174ea6; }
+    .level { font-size: 12px; font-weight: bold; color: #52647c; }
+    footer {
+      padding: 28px 8%;
+      background: #102a43;
+      color: white;
+      text-align: center;
+    }
+    footer a { color: #b9d8ff; }
+    @media (max-width: 600px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      nav a { margin: 0 12px 0 0; }
+      .hero { padding: 55px 7%; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <strong>Shruti | Data Analytics</strong>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <p class="tag">DATA ANALYTICS PORTFOLIO</p>
+    <h1>Hi, I'm Shruti.<br>I turn data into insights.</h1>
+    <p>
+      Aspiring Data Analyst passionate about business intelligence,
+      data visualization, and solving business problems using data.
+    </p>
+    <a class="button" href="#projects">Explore My Projects</a>
+    <a class="button secondary" href="#contact">Contact Me</a>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="muted">
+        I am building practical data analytics projects to strengthen
+        my skills in data cleaning, reporting, SQL analysis, Python,
+        and interactive dashboard development.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills & Tools</h2>
+      <div class="skills">
+        <article class="card">
+          <h3>Excel</h3>
+          <p class="muted">Data cleaning, PivotTables, formulas and dashboards.</p>
+        </article>
+        <article class="card">
+          <h3>SQL & MySQL</h3>
+          <p class="muted">Filtering, aggregations and business queries.</p>
+        </article>
+        <article class="card">
+          <h3>Power BI</h3>
+          <p class="muted">Data modeling, DAX and interactive reports.</p>
+        </article>
+        <article class="card">
+          <h3>Python</h3>
+          <p class="muted">Pandas, exploratory analysis and visualization.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <p class="muted">Three projects, progressing from beginner to advanced.</p>
+      <div class="projects">
+        <article class="card">
+          <p class="level">PROJECT 01 · BEGINNER</p>
+          <h3>Retail Sales Analysis</h3>
+          <p>Analyze sales, profit, product categories and regional performance.</p>
+          <p class="muted">Excel · SQL · Power BI · Python</p>
+          <p>Project files coming soon.</p>
+        </article>
+        <article class="card">
+          <p class="level">PROJECT 02 · INTERMEDIATE</p>
+          <h3>E-commerce Analysis</h3>
+          <p>Explore sales trends, product performance and customer behavior.</p>
+          <p class="muted">Excel · SQL · Power BI · Python</p>
+          <p>Project files coming soon.</p>
+        </article>
+        <article class="card">
+          <p class="level">PROJECT 03 · ADVANCED</p>
+          <h3>Customer Retention</h3>
+          <p>Study customer segments, repeat purchases and retention patterns.</p>
+          <p class="muted">SQL · Python · Power BI</p>
+          <p>Project files coming soon.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Let's Connect</h2>
+      <p class="muted">
+        Interested in data analytics and business intelligence.
+      </p>
+      <p>
+        <a href="https://github.com/ShrutiNavdhinge">GitHub Profile</a>
+        &nbsp; | &nbsp;
+        <a href="https://www.linkedin.com/">LinkedIn</a>
+      </p>
+      <p class="muted">Add your professional email and LinkedIn profile URL here.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Shruti Navdhinge · Data Analytics Portfolio</p>
+  </footer>
+</body>
+</html>
+
