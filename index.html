@@ -4,98 +4,293 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shruti Navdhinge's Data Analyst portfolio featuring Excel, SQL, Power BI and Python projects.">
   <title>Shruti Navdhinge | Data Analyst Portfolio</title>
-  <meta name="description" content="Explore Shruti's Data Analytics portfolio featuring Excel, SQL, Power BI and Python projects.">
+
   <style>
+    :root {
+      --bg: #080b18;
+      --panel: #11162a;
+      --purple: #a78bfa;
+      --purple-bright: #8b5cf6;
+      --text: #f4f3ff;
+      --muted: #b5b8d0;
+      --border: #292d49;
+    }
+
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #182338;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
+
+    a { color: inherit; }
+
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 18px 8%;
-      background: #fff;
-      border-bottom: 1px solid #e5eaf2;
       position: sticky;
       top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 8%;
+      background: rgba(8, 11, 24, 0.96);
+      border-bottom: 1px solid var(--border);
     }
-    nav strong { color: #174ea6; }
-    nav a {
-      color: #26344b;
+
+    .brand {
+      font-weight: bold;
+      color: var(--purple);
+      font-size: 18px;
       text-decoration: none;
-      margin-left: 16px;
+    }
+
+    nav .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    nav .links a {
+      text-decoration: none;
+      color: var(--muted);
       font-size: 14px;
     }
+
+    nav .links a:hover { color: var(--purple); }
+
     .hero {
-      padding: 85px 8%;
-      background: #102a43;
-      color: white;
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      padding: 80px 10%;
+      background:
+        radial-gradient(ellipse at 80% 40%, #33205a 0%, transparent 42%),
+        var(--bg);
     }
-    .hero p { max-width: 650px; }
-    .tag {
-      color: #b9d8ff;
+
+    .hero-content { max-width: 650px; }
+
+    .eyebrow {
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 15px 0;
+      font-size: clamp(38px, 5.5vw, 65px);
+      line-height: 1.13;
+      letter-spacing: -1.5px;
+    }
+
+    .highlight { color: var(--purple); }
+
+    .hero-content > p:not(.eyebrow) {
+      color: var(--muted);
+      max-width: 570px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border: 1px solid var(--purple-bright);
+      border-radius: 8px;
+      background: var(--purple-bright);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn.outline {
+      background: transparent;
+      color: var(--purple);
+    }
+
+    .profile-frame {
+      flex: 0 0 280px;
+      width: 280px;
+      height: 350px;
+      padding: 6px;
+      border-radius: 150px 150px 24px 24px;
+      background: linear-gradient(145deg, var(--purple), #5425a8);
+      box-shadow: 0 0 55px #8b5cf633;
+    }
+
+    .profile-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      border-radius: 145px 145px 20px 20px;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: auto;
+      padding: 25px 25px 60px;
+    }
+
+    section { padding: 55px 0 25px; }
+
+    .section-label {
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 8px 0 12px;
+      font-size: clamp(28px, 4vw, 38px);
+    }
+
+    .section-intro {
+      max-width: 720px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .card {
+      min-width: 0;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: linear-gradient(145deg, var(--panel), #0d1121);
+    }
+
+    .card h3 {
+      margin: 8px 0;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .skill-icon {
+      color: var(--purple);
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .project-level {
+      color: var(--purple);
+      font-size: 11px;
       font-weight: bold;
       letter-spacing: 1px;
     }
-    h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.15; }
-    h2 { font-size: 30px; }
-    .button {
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .tags span {
+      padding: 5px 9px;
+      border: 1px solid #3a315d;
+      border-radius: 20px;
+      color: #d4c7ff;
+      font-size: 11px;
+    }
+
+    .coming-soon {
       display: inline-block;
-      margin: 14px 10px 0 0;
-      padding: 11px 18px;
-      border-radius: 7px;
-      background: #fff;
-      color: #102a43;
-      text-decoration: none;
-      font-weight: bold;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
     }
-    .button.secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid #b9d8ff;
+
+    .contact-box {
+      padding: 30px;
+      border: 1px solid #44336c;
+      border-radius: 16px;
+      background: linear-gradient(120deg, #17132d, #11162a);
     }
-    main { max-width: 1100px; margin: auto; padding: 30px 22px; }
-    section { padding: 35px 0; }
-    .muted { color: #5b6678; }
-    .skills, .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: white;
-      border: 1px solid #e0e7f0;
-      border-radius: 12px;
-      padding: 22px;
-    }
-    .card h3 { margin-top: 0; color: #174ea6; }
-    .level { font-size: 12px; font-weight: bold; color: #52647c; }
+
     footer {
-      padding: 28px 8%;
-      background: #102a43;
-      color: white;
+      padding: 28px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
       text-align: center;
+      font-size: 13px;
     }
-    footer a { color: #b9d8ff; }
-    @media (max-width: 600px) {
-      nav { align-items: flex-start; flex-direction: column; }
-      nav a { margin: 0 12px 0 0; }
-      .hero { padding: 55px 7%; }
+
+    @media (max-width: 800px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 55px 7%;
+      }
+
+      .hero-content > p:not(.eyebrow) { margin-inline: auto; }
+
+      .buttons { justify-content: center; }
+
+      .profile-frame {
+        flex-basis: auto;
+        width: 220px;
+        height: 275px;
+      }
+
+      .projects { grid-template-columns: 1fr; }
+
+      .grid { grid-template-columns: 1fr; }
+
+      nav {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav .links {
+        justify-content: center;
+        gap: 15px;
+      }
     }
   </style>
 </head>
+
 <body>
   <nav>
-    <strong>Shruti | Data Analytics</strong>
-    <div>
+    <a class="brand" href="#home">Shruti.dev</a>
+
+    <div class="links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
@@ -103,94 +298,158 @@
     </div>
   </nav>
 
-  <header class="hero">
-    <p class="tag">DATA ANALYTICS PORTFOLIO</p>
-    <h1>Hi, I'm Shruti.<br>I turn data into insights.</h1>
-    <p>
-      Aspiring Data Analyst passionate about business intelligence,
-      data visualization, and solving business problems using data.
-    </p>
-    <a class="button" href="#projects">Explore My Projects</a>
-    <a class="button secondary" href="#contact">Contact Me</a>
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <p class="eyebrow">Welcome to my portfolio</p>
+      <h1>Hi, I'm Shruti.<br>
+        <span class="highlight">Data meets insights.</span>
+      </h1>
+      <p>
+        I am a data analytics professional building practical
+        skills in business reporting, data visualization and
+        data-driven problem solving using Excel, SQL, Power BI
+        and Python.
+      </p>
+
+      <div class="buttons">
+        <a class="btn" href="#projects">Explore Projects ↓</a>
+        <a class="btn outline" href="#contact">Let's Connect</a>
+      </div>
+    </div>
+
+    <div class="profile-frame">
+      <img
+        src="passport%20size%20photo.jpeg"
+        alt="Shruti Navdhinge - Data Analyst"
+      >
+    </div>
   </header>
 
   <main>
     <section id="about">
-      <h2>About Me</h2>
-      <p class="muted">
-        I am building practical data analytics projects to strengthen
-        my skills in data cleaning, reporting, SQL analysis, Python,
-        and interactive dashboard development.
+      <p class="section-label">A little about me</p>
+      <h2>Turning data into decisions.</h2>
+      <p class="section-intro">
+        I am interested in understanding business problems,
+        finding patterns in data, and presenting clear insights
+        that help teams make informed decisions. My portfolio
+        showcases hands-on projects across multiple analytics tools.
       </p>
     </section>
 
     <section id="skills">
-      <h2>Skills & Tools</h2>
-      <div class="skills">
+      <p class="section-label">My toolkit</p>
+      <h2>Skills & Technologies</h2>
+
+      <div class="grid">
         <article class="card">
-          <h3>Excel</h3>
-          <p class="muted">Data cleaning, PivotTables, formulas and dashboards.</p>
+          <div class="skill-icon">01 / XLS</div>
+          <h3>Microsoft Excel</h3>
+          <p>Data cleaning, formulas, PivotTables, charts and MIS reporting.</p>
         </article>
+
         <article class="card">
+          <div class="skill-icon">02 / SQL</div>
           <h3>SQL & MySQL</h3>
-          <p class="muted">Filtering, aggregations and business queries.</p>
+          <p>Data filtering, joins, aggregation, subqueries and analytical queries.</p>
         </article>
+
         <article class="card">
+          <div class="skill-icon">03 / PBI</div>
           <h3>Power BI</h3>
-          <p class="muted">Data modeling, DAX and interactive reports.</p>
+          <p>Data modeling, DAX measures, interactive dashboards and reporting.</p>
         </article>
+
         <article class="card">
+          <div class="skill-icon">04 / PY</div>
           <h3>Python</h3>
-          <p class="muted">Pandas, exploratory analysis and visualization.</p>
+          <p>Pandas, data cleaning, exploratory analysis and visualizations.</p>
         </article>
       </div>
     </section>
 
     <section id="projects">
-      <h2>Featured Projects</h2>
-      <p class="muted">Three projects, progressing from beginner to advanced.</p>
+      <p class="section-label">Selected work</p>
+      <h2>My Projects</h2>
+      <p class="section-intro">
+        Three portfolio projects designed to demonstrate
+        progressive analytical skills.
+      </p>
+
       <div class="projects">
         <article class="card">
-          <p class="level">PROJECT 01 · BEGINNER</p>
+          <p class="project-level">PROJECT 01 · BEGINNER</p>
           <h3>Retail Sales Analysis</h3>
-          <p>Analyze sales, profit, product categories and regional performance.</p>
-          <p class="muted">Excel · SQL · Power BI · Python</p>
-          <p>Project files coming soon.</p>
+          <p>
+            Analyze sales, profit, product categories, regional
+            performance and discount patterns.
+          </p>
+          <div class="tags">
+            <span>Excel</span><span>SQL</span>
+            <span>Power BI</span><span>Python</span>
+          </div>
+          <span class="coming-soon">Project in progress</span>
         </article>
+
         <article class="card">
-          <p class="level">PROJECT 02 · INTERMEDIATE</p>
+          <p class="project-level">PROJECT 02 · INTERMEDIATE</p>
           <h3>E-commerce Analysis</h3>
-          <p>Explore sales trends, product performance and customer behavior.</p>
-          <p class="muted">Excel · SQL · Power BI · Python</p>
-          <p>Project files coming soon.</p>
+          <p>
+            Explore product performance, purchasing behaviour,
+            monthly trends and business KPIs.
+          </p>
+          <div class="tags">
+            <span>Excel</span><span>SQL</span>
+            <span>Power BI</span><span>Python</span>
+          </div>
+          <span class="coming-soon">Coming soon</span>
         </article>
+
         <article class="card">
-          <p class="level">PROJECT 03 · ADVANCED</p>
+          <p class="project-level">PROJECT 03 · ADVANCED</p>
           <h3>Customer Retention</h3>
-          <p>Study customer segments, repeat purchases and retention patterns.</p>
-          <p class="muted">SQL · Python · Power BI</p>
-          <p>Project files coming soon.</p>
+          <p>
+            Investigate customer segments, repeat purchases,
+            retention cohorts and customer behaviour.
+          </p>
+          <div class="tags">
+            <span>SQL</span><span>Python</span>
+            <span>Power BI</span>
+          </div>
+          <span class="coming-soon">Coming soon</span>
         </article>
       </div>
     </section>
 
     <section id="contact">
-      <h2>Let's Connect</h2>
-      <p class="muted">
-        Interested in data analytics and business intelligence.
-      </p>
-      <p>
-        <a href="https://github.com/ShrutiNavdhinge">GitHub Profile</a>
-        &nbsp; | &nbsp;
-        <a href="https://www.linkedin.com/">LinkedIn</a>
-      </p>
-      <p class="muted">Add your professional email and LinkedIn profile URL here.</p>
+      <div class="contact-box">
+        <p class="section-label">Get in touch</p>
+        <h2>Let's connect.</h2>
+        <p class="section-intro">
+          Interested in data analytics, business intelligence
+          and meaningful projects? Connect with me online.
+        </p>
+        <div class="buttons">
+          <a class="btn"
+             href="https://github.com/ShrutiNavdhinge"
+             target="_blank" rel="noopener noreferrer">
+            GitHub Profile ↗
+          </a>
+          <a class="btn outline"
+             href="https://www.linkedin.com/"
+             target="_blank" rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+        </div>
+        <p class="coming-soon">
+          Replace the LinkedIn homepage link with your personal profile URL.
+        </p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Shruti Navdhinge · Data Analytics Portfolio</p>
+    © 2026 Shruti Navdhinge · Data Analyst Portfolio
   </footer>
 </body>
 </html>
-
